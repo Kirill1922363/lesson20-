@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Читач файлів</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Читач текстових файлів</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".txt,.py,.js,.html,.css,.json,.csv" required>
+        <button type="submit">Завантажити</button>
+    </form>
+    
+    {% if content %}
+        <h2>Вміст файлу: {{ filename }}</h2>
+        <pre>{{ content }}</pre>
+    {% endif %}
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
